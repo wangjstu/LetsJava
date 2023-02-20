@@ -7,6 +7,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Arrays;
@@ -36,10 +37,11 @@ public class PoiExample01 {
         /*5. Creating a Row and Cells*/
         Row row = wbSheet.createRow(0);
         row.createCell(0).setCellValue("姓名");
-        row.createCell(1).setCellValue("性别");
-        row.createCell(2).setCellValue("班级");
-        row.createCell(3).setCellValue("数学");
-        row.createCell(4).setCellValue("学费");
+        row.createCell(1).setCellValue("文本");
+        row.createCell(2).setCellValue("千分位数字");
+        row.createCell(3).setCellValue("Double字段");
+        row.createCell(4).setCellValue("数字文本混合");
+        row.createCell(5).setCellValue("百分比");
 
         /*6. Auto Sizing Columns*/
         /*for (int i = wbSheet.getRow(0).getFirstCellNum(), end = wbSheet.getRow(0).getLastCellNum(); i<end;i++) {
@@ -54,10 +56,11 @@ public class PoiExample01 {
 
         /*Adding rows*/
         List<List<String>> listVal = Arrays.asList(
-                Arrays.asList("wang军", "China","1,378,020,000","147.75","2016"),
-                Arrays.asList("w军", "United States of America","323,128,000","35.32","2016Q"),
-                Arrays.asList("L军", "Indonesia","257,453,000.12","142.12","2016"),
-                Arrays.asList("M军", "Brazil","206,081,000","24.66","2016")
+                Arrays.asList("wang军", "China","1,378,020,000","147.75","2016","68.12%"),
+                Arrays.asList("w军", "United States of America","323,128,000","35.32","2016Q","0%"),
+                Arrays.asList("L军", "Indonesia","257,453,000.12","142.12","2016","--"),
+                Arrays.asList("M军", "Brazil","206,081,000","24.66","2016","0.02%"),
+                Arrays.asList("M军", "Brazil","206,081,000","24.66","2016","100%")
         );
         int rowNum = 1;
 
@@ -72,6 +75,10 @@ public class PoiExample01 {
          */
         short builtinFormat = (short) BuiltinFormats.getBuiltinFormat("#,##0.00");
         cellStyleForThousandsSeparator.setDataFormat(builtinFormat);
+
+        //百分比
+        CellStyle cellStyleForPercentage  = wb.createCellStyle();
+        cellStyleForPercentage.setDataFormat((short) BuiltinFormats.getBuiltinFormat("0.00%"));
 
         for (List<String> ls : listVal) {
             Row rows = wbSheet.createRow(rowNum);
@@ -97,6 +104,16 @@ public class PoiExample01 {
                 rows.createCell(4).setCellValue(year);
             } catch (NumberFormatException exception) {
                 rows.createCell(4).setCellValue(ls.get(4));
+            }
+
+            /*百分比*/
+            try {
+                BigDecimal divide = new BigDecimal(ls.get(5).trim().replace("%", "")).divide(BigDecimal.valueOf(100));
+                Cell cell5 = rows.createCell(5);
+                cell5.setCellStyle(cellStyleForPercentage);
+                cell5.setCellValue(divide.doubleValue());
+            } catch (NumberFormatException exception) {
+                rows.createCell(5).setCellValue(ls.get(5));
             }
 
         }

@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e54cdebe-ae10-4616-bbf4-21ae23ae57e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/LetsJava.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helloPoiExcel.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangjstu/NovixysBlog/PoiExample01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangjstu/NovixysBlog/PoiExample02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloPoiExcel.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/helloPoiExcel.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangjstu/NovixysBlog/PoiExample01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangjstu/NovixysBlog/PoiExample01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +81,9 @@
       <option name="presentableId" value="Default" />
       <updated>1676543637305</updated>
       <workItem from="1676543639100" duration="2610000" />
-      <workItem from="1676546332762" duration="4887000" />
+      <workItem from="1676546332762" duration="6603000" />
+      <workItem from="1676615744467" duration="6613000" />
+      <workItem from="1676881221171" duration="659000" />
     </task>
     <servers />
   </component>
